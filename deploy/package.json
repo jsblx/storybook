@@ -1,0 +1,12 @@
+{
+    "name": "storybook",
+    "devDependencies": {
+        "@types/node": "^18.11.9"
+    },
+    "dependencies": {
+        "@pulumi/aws": "5.13.0",
+        "@pulumi/pulumi": "^3.0.0",
+        "@pulumi/synced-folder": "*",
+        "typescript": "^4.0.0"
+    }
+}
