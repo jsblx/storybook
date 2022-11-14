@@ -42,10 +42,10 @@ jobs:
 
       - name: Deploy to AWS using Pulumi script
         uses: pulumi/actions@v3
-        working-directory: ./deploy
         with:
           command: up
           stack-name: prod
           refresh: true
+          working-directory: ./deploy
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
