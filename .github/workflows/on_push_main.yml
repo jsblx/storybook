@@ -44,20 +44,15 @@ jobs:
           yarn lint
         working-directory: ./frontend
 
-      - name: Refresh AWS resources using pulumi
-        uses: pulumi/actions@v3.2.0
-        with:
-          command: refresh
-          stack-name: prod
-          work-dir: ./deploy
-        env:
-          PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
+      - name: Install Pulumi CLI
+        uses: pulumi/setup-pulumi@v2
 
       - name: Deploy to AWS using Pulumi script
         uses: pulumi/actions@v3.2.0
         with:
           command: up
           stack-name: prod
+          refresh: true
           work-dir: ./deploy
         env:
           PULUMI_ACCESS_TOKEN: ${{ secrets.PULUMI_ACCESS_TOKEN }}
