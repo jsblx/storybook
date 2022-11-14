@@ -2,9 +2,9 @@ config:
   aws:allowedAccountIds:
     - "163923458230"
   aws:region: us-west-2
-  static-website:buildPath: ../src/build
+  static-website:buildPath: ../frontend/build
   static-website:domain: jsblx.me
   static-website:errorDocument: error.html
   static-website:indexDocument: index.html
-  static-website:sourcePath: ../src
+  static-website:sourcePath: ../frontend
   static-website:subdomain: storybook
